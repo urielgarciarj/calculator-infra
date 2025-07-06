@@ -1,6 +1,6 @@
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
-  version = "~> 19.0"
+  version = "~> 20.0"
 
   cluster_name                    = "calculator-eks"
   cluster_version                 = "1.27"
@@ -20,8 +20,6 @@ module "eks" {
       resolve_conflicts = "OVERWRITE"
     }
   }
-
-  manage_aws_auth_configmap = true
 
   eks_managed_node_groups = {
     node-group = {
